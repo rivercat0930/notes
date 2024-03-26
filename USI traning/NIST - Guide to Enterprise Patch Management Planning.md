@@ -31,8 +31,6 @@ This publication is intended to apply to all types of computing technology asset
 
 * OT refers to programmable systems or devices that interact with the physical environment (or manage devices that interact with the physical environment)
 
-=== 20240319 End ===
-
 ---
 
 ## Risk Response Approaches for Software Vulnerabilities
@@ -43,7 +41,7 @@ This section outlines possible risk response approaches for software vulnerabili
 
 Patching is one of several ways to respond to risks from software vulnerabilities.
 
-This publication references four types of *risk responses*
+This publication references four types of *risk responses*:
 
 1. **Accept**
 
@@ -59,13 +57,19 @@ This publication references four types of *risk responses*
 
         * Physical security controls
 
-            Such things as data center perimeter fencing, locks, guards, access control cards, biometric access control systems, surveillance cameras and instrusion detection sensors.
+            Such things as data center perimeter fencing, locks, guards, access control cards, biometric access control systems, surveillance cameras and intrusion detection sensors.
 
         * Digital security controls
 
+            Such as usernames and passwords, two-factor authentication, antivirus software and firewalls.
+
         * Cybersecurity controls
 
+            Include anything specifically designed to prevent attacks on data, including DDoS mitigation and intrusion prevention systems.
+
         * Cloud security controls
+
+            Include measures that you take in cooperation with a cloud services provider to offer the necessary protection for data and workloads.
 
     * Waht is potential impact is low enough?
 
@@ -88,5 +92,3 @@ This publication references four types of *risk responses*
 1. [NIST - Guide to Enterprise Patch Management Planning:Preventive Maintenance for Technology](https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-40r4.pdf)
 
 1. [What is Security Controls](https://ibm.com/topics/security-controls)
-
-1. []
