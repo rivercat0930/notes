@@ -73,17 +73,27 @@ This publication references four types of *risk responses*:
 
     * Waht is potential impact is low enough?
 
+        A system falls under a low impact level if the loss of confidentiality, integrity, or availability will have a *limited impact* on the agency or constituents.
+
 1. **Mitigate**
 
-    Reduce the risk by eliminating the vulnerabilities (patching the vulnerable software, disabling a vulnerable feature, or upgrading to a newer software version without the vulnerabilities) and/or deploying additional security controls to reduce vulnerability exploitation (...)
+    Reduce the risk by eliminating the vulnerabilities (patching the vulnerable software, disabling a vulnerable feature, or upgrading to a newer software version without the vulnerabilities) and/or deploying additional security controls to reduce vulnerability exploitation (using firewalls and network segmentation to isolate vulnerable assets)
 
 1. **Transfer**
 
-    detail...
+    Reduce the risk by sharing some of the consequences with another party, such as by purchasing **cybersecurity insurance** or by replacing conventional software installations with software-as-a-service (SaaS) usage where the SaaS vendor/managed service provider takes care of patching.
 
 1. **Avoid**
 
-    detail...
+    Ensure that the risk does not occur by eliminating the attack surface, such as by uninstalling the vulnerable software, decommissioning assets with the vulnerabilities, or disabling computing capabilities in assets that can function without them.
+
+    [**Additional Information**]
+
+    * Attack surface
+
+        The attack surface is the number of all possible points, or attack vectors, where an unauthorized user can access a system and extract data.
+
+By default
 
 ---
 
@@ -92,3 +102,7 @@ This publication references four types of *risk responses*:
 1. [NIST - Guide to Enterprise Patch Management Planning:Preventive Maintenance for Technology](https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-40r4.pdf)
 
 1. [What is Security Controls](https://ibm.com/topics/security-controls)
+
+1. [FedRAMP and FIPS-Defined Impact Levels](https://linkedin.com/pulse/fedramp-fips-defined-impact-levels-continuum-grc)
+
+1. [What Is An Attack Surface?](https://fortinet.com/resources/cyberglossary/attack-surface)
