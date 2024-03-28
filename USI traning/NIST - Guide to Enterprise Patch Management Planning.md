@@ -93,7 +93,57 @@ This publication references four types of *risk responses*:
 
         The attack surface is the number of all possible points, or attack vectors, where an unauthorized user can access a system and extract data.
 
-By default
+By default, an organization accepts the risk posed by using its software. Software could have vulnerabilities in it at any time that the organization does not know about, and sometimes previously unknown vulnerabilities are exploited - a zero-day attack.
+
+Once a new vulnerability becomes publicly known, risk usually increases because attackers are more likely to develop exploits that target the vulnerable software.
+
+**Installing a patch or update or upgrading software to a newer version without the vulnerabilities are the only forms of risk response that can completely eliminate the vulnerabilities without removing functionality.** However, immediately patching, updating, or upgrading vulnerable software is sometimes not viable. Examples of why include the following:
+
+* A patch may not be available yet.
+
+    A vulnerability may be announced before a patch is ready. (it could be days, weeks, or months before the patch is released)
+
+* The vendor may no longer support the vulnerable software. (Meaning that a patch for it will never be released because the software is at end-of-life)
+
+* The organization may need to wait for a scheduled outage window, perform testing first, update other software that interacts with the software to be patched, or train exployees on new features or interfaces.
+
+* Some patches may be considered a higher priority, so other patches are delayed due to limited resources.
+
+* The manufacturer may require customers to update the software on a delayed schedule.
+
+    Such as for assets with human safety implications in a highly regulated sector, because of the extensive testing and certification that must be performed first.
+
+    ***In these cases, organizations that choose to implement updates on their own may be voiding the product warranty and preventing future support from the manufacturer.***
+
+* The organization may need to comply with specific legal, regulatory, or business requirements.
+
+    For example, an organization may need to use Federal Information Processing Standards (FIPS)-validated cryptographic modules for protecting data, but the cryptographic modules in the upgraded software are not yet FIPS-validated.
+
+***Even when patching, updating, or upgrading vulnerable software is viable, organizations can choose to respond to the risk from the vulnerabilities in a different way, such as any of the other risk response examples at the beginning of this section.***
+
+### Software Vulnerability Management Life Cycle
+
+1. **Know when new software vulnerabilities affect your organization's assets, including applications, operating systems, and firmware.**
+
+    This involves knowing what assets your organization uses and which software and software versions those assets run down to the level of packages and libraries, as well as keeping track of new vulnerabilities in that software.
+
+    For example, your organization might subscribe to vulnerability feeds from software vendors, security researchers, and the National Vulnerability Database(NVD).
+
+1. **Plan the risk response**
+
+    This involves assessing the risk the vulnerability poses to your organization, choosing which form of risk response (or combination of forms) to use, and deciding how to implement the risk response.
+
+    For example, you might determine that risk is elevated because the vulnerability is present in many organization assets and is being exploited in the wild, then choose mitigation as the risk response and mitigate the vulnerability by upgrading the vulnerable software and altering the software's configuration settings.
+
+1. **Execute the risk response**
+
+    This will vary depending on the nature of the selected risk response, but common phases include the following:
+
+    1. **Prepare the risk response**
+
+        This encompasses any preparatory activities, such as acquiring, validating, and testing patches for the vulnerable software; deploying additional security controls to safeguard the vulnerable software; or acquiring a replacement for a legacy asset that cannot be patched. It might also include scheduling the risk response and coordinating deployment plans with enterprise change management, business units, and others.
+
+    (2024/03/28 end)
 
 ---
 
