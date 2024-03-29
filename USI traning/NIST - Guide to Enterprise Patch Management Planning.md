@@ -143,7 +143,101 @@ Once a new vulnerability becomes publicly known, risk usually increases because 
 
         This encompasses any preparatory activities, such as acquiring, validating, and testing patches for the vulnerable software; deploying additional security controls to safeguard the vulnerable software; or acquiring a replacement for a legacy asset that cannot be patched. It might also include scheduling the risk response and coordinating deployment plans with enterprise change management, business units, and others.
 
-    (2024/03/28 end)
+    1. **Implement the risk response**
+
+        Examples of this include distributing and installing a patch, purchasing cybersecurity insurance, deploying additional security controls, and changing asset configurations and state (software reset, platform reboot).
+
+        ***Any issues that occur during implementation should be resolved.***
+
+    1. **Verify the risk response**
+
+        This step involves ensuring that the implementation has been completed successfully.
+
+        * For patching, this means confirming that the patch is installed and has taken effect.
+
+        * For deploying additional security controls, ensure they are functioning as intended.
+
+        * For risk avoidance, verify that vulnerable assets were decommissioned or replaced.
+
+    1. **Continuously monitor the risk response**
+
+        Make sure that the risk response continues to be in plcae. (no one uninstalls the patch, deactivates the additional security controls, lets the cybersecurity insurance lapse, or restarts the decommissioned asset)
+
+### Risk Response Execution
+
+This section takes a closer look at the common phases of executing a risk response, as described in the previous subsection, specifically within the context of patching.
+
+#### Prepare to Deploy the Patch
+
+Examples of common steps for preparing to deploy a patch include the following.
+
+* **Prioritize the patch**
+
+    A patch may be a higher priority to deploy than others because its deployment would reduce cybersecurity risk more than other patches would. Another patch may be a lower priority because it addrersses a low-risk vulnerability on a small number of low-importance assets.
+
+* **Schedule patch deployment**
+
+    Many organizations schedule patch deployments as part of their enterprise change management activities.
+
+* **Acquire the patch**
+
+    Patches may be downloaded from the internet, built internally by developers or system administrators, or provided through removable media.
+
+* **Validate the patch**
+
+    A patch's authenticity and integrity should be confirmed, preferably by automated means, before the patch is tested or installed. The patch could have been acquired from a rogue source or tampered with in transit or after acquisition.
+
+* **Test the patch**
+
+    A patch may be tested before deployment. This is intended to reduce operational risk by identifying problems with a patch before placing it into production.
+
+    Testing may be performed manually or through automated methods.
+
+#### Deploy the Patch
+
+Patch deployment varies widely based on several factors
+
+* The type of software being updated. (firmware, OS, application)
+
+* The asset platform type. (IT, OT, IoT, mobile, cloud, VM, containers)
+
+* Platform traits. (managed/unmanaged asset, on-premises or not, virtualized or not, and containerized or not)
+
+* Environmental limitations. (network connectivity and bandwidth)
+
+**Many aspects of patch deployment are dependent on patch management technologies.**
+
+At a high level, example of common steps for deploying a patch include:
+
+* **Distribute the patch**
+
+    Distributing the patch to the assets that need to have it installed can be organization-controlled (and occur automatically, manually, or as scheduled) or vendor-controlled, such as delivered from the cloud.
+
+* **Validate the patch**
+
+    A patch's authenticity and integrity should be confirmed before installation, preferably through automated means.
+
+* **Install the patch**
+
+    Installation can occur in numerous ways.
+
+   1. automatically
+
+   1. manually
+
+        When directed to do so by a user, administrator, vendor, or tool.
+
+        As a result of other software being installed or updated.
+
+        Through the replacement of removable media used by an asset.
+
+    Some installations require administrator privileges, such as installing firmware patches for a BIOS. Some patch installations require user participation or cooperation.
+
+* **Change software configuration and state**
+
+    In some cases, making a patch take effect necessitates implementing changes. (Including restarting patched software, rebooting the operating system or platform on which the patched software runs, redeploying the applications, or altering software configuration settings)
+
+    In other cases, no such changes are needed.
 
 ---
 
