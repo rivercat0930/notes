@@ -221,15 +221,15 @@ At a high level, example of common steps for deploying a patch include:
 
     Installation can occur in numerous ways.
 
-   1. automatically
+  * automatically
 
-   1. manually
+  * manually
 
-        When directed to do so by a user, administrator, vendor, or tool.
+    When directed to do so by a user, administrator, vendor, or tool.
 
-        As a result of other software being installed or updated.
+    As a result of other software being installed or updated.
 
-        Through the replacement of removable media used by an asset.
+    Through the replacement of removable media used by an asset.
 
     Some installations require administrator privileges, such as installing firmware patches for a BIOS. Some patch installations require user participation or cooperation.
 
@@ -238,6 +238,32 @@ At a high level, example of common steps for deploying a patch include:
     In some cases, making a patch take effect necessitates implementing changes. (Including restarting patched software, rebooting the operating system or platform on which the patched software runs, redeploying the applications, or altering software configuration settings)
 
     In other cases, no such changes are needed.
+
+* **Resolve any issue**
+
+    Installing a patch may cause side effects to occur, like inadvertently altering existing security configuration settings or adding new settings, and these side effects can inadvertently create a new security problem while fixing the original one.
+
+    Patch installation can also cause operational issues that may necessitate uninstalling the patch, reverting to the previous version of the software, or restoring the software or asset from backups.
+
+* **Verify Deployment**
+
+    A patch’s deployment can be verified to ensure that it has been installed successfully and taken effect.
+
+    The robustness of verification can vary a great deal and is largely dependent on an organization’s needs, but automated means are generally needed to achieve verification at scale.
+
+* **Monitor the Deployed Patches**
+
+    the patch’s deployment can be monitored using automation to confirm that the patch is still installed.
+
+  * monitoring could confirm that the patch has not been uninstalled by a user or an attacker
+
+  * an unpatched version of the software has not been restored from a backup
+  
+  * the device has not been reset to a vulnerable factory-default state
+
+    Another reason for monitoring the deployed patches is to see if the patched software’s behavior changes after patching.
+
+    As part of a layered security approach to mitigating supply chain risk, this might be helpful at detecting, responding to, and recovering from situations where the installed patch was itself compromised.
 
 ---
 
