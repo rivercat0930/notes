@@ -267,6 +267,253 @@ At a high level, example of common steps for deploying a patch include:
 
 ---
 
+## Recommendations for Enterprise Patch Management Planning
+
+* Enterprise patch management has been a contentious issue for decades, with personnel from the security and business/mission side of organization often having conflicting opinions
+
+    For example, many organizations have struggled with balancing the trade-offs between earlier deployment and more testing.
+
+    Deploying patches more quickly reduces the window of opportunity for attackers, but increases the risk of operational disruption because of lack of testing.
+
+    Testing patches before deployment decreases the risk of operational disruption but increases the window of oportunity for attackers.
+
+    Testing can also consume considerable staff resources, and it still might miss problems.
+
+* The reason that made enterprise patch management more difficult is **dynamic and dispersed computing assets**, as well as the sheer number of installed software components to patch
+
+  Patch management processes and technology take different forms depending on the type of assets.
+
+  The result is that ***many organizations are unable to keep up with patching***.
+
+  ***Patching often becomes primarily reactive versus proactive.***
+
+  * Proactive
+
+    Means doing more work now to reduce the likelihood of incidents in the future.
+
+    It also means that if a patch fails, that disruption can be managed and remediated on the organization's schedule.
+
+  * Reactive
+
+    Means if a compromise of an unpatched vulnerability occurs, the organization will have to perform incident response, their reputation may be danaged, and/or they may potentially be fined or sued.
+
+    **As part of incident response efforts, the missing patch will probably need to be installed anyway in addition to installing all the preceding patches it is dependent upon, as well as performing other prerequisite recovery actions such as reverting to a good known state or rebuilding the environment from scratch.**
+
+* Disruptions from **patching** are **largely controllable**, while disruptions from **incidents** are largely **uncontrollable**.
+
+* **Disruptions from patching are also a necessary part of maintaining nearly all types of technology in order to avoid larger disruptions from incidents.**
+
+**Security and technology personnel can take steps to reduce the likelihood of patching causing disruptions, as well as direct patching efforts to prioritize the vulnerabilities that are causing the most risk to the organization.**
+
+### The recommendations support the following principle
+
+Organizations should strive to adopt in their enterprise patch management practices.
+
+* **Problems are inevitable; be prepared for them**
+
+    Risk responses, including patching, will nerver be perfect. Some may inadvertently cause operational problems.
+
+    For example, to improve enterprise patch management, organizations need to change their culture so that instead of fearing problems and thus delaying risk responses, personnel are prepared to address problems when they occur. The organization needs to become more *resilient*, and everyone in the organization needs to understand that problems caused by patching are a necessary inconvenience that helps prevent major compromises.
+
+* **Simplify decision making**
+
+    Conducting a risk assessment of each new vulnerability in order to plan the optimal risk response for it is simply **not feasible**.
+
+    Organizations do not have the time, resources, expertise, or tools to do so. Planning needs to be done in advance so that when a new vulnerability becomes known, a decision can quickly be made about how to respond to it.
+
+* **Rely on automation**
+
+    Automation is also needed for emergency situations, like patching a severe vulnerability that attackers are actively exploiting. Having automation in place gives an organization agility and scalability when it comes to its risk responses.
+
+* **Start improvements now**
+
+    Some of the changes that an organization may need to make might take years to put in place, but that does not mean that other practices cannot be improved in the meantime.
+
+### Reduce Patching-Related Disruptions
+
+***Organizations should strive to decrease the number of vulnerabilities introduced into their environments.***
+
+Possible methods for decreasing the number of vulnerabilities:
+
+1. Harden software
+
+    Such as enforcing the principles of least privilege and least functionality (deactivating or uninstalling software services, features, and other components that are not needed)
+
+1. Acquire software that is likely to have fewer vulnerabilities over time compared to other software.
+
+1. Work with software development partners that are likely to introduce fewer vulnerabilities into software over time
+
+    taking into consideration factors such as how rigorous their secure software development practices are, how quickly they address issues and release patches, how often problems are associated with their patches, and how transparent they are in their security-related communications.
+
+1. Use managed services instead of software when feasible
+
+    Before: You have an SQL server that you're responsible for maintaining. This includes ensuring its security, applying patches and updates, managing backups, and handling any scalability or performance issues.
+
+    After: You transition to using Amazon Web Services (AWS) Relational Database Service (RDS). AWS RDS is a managed service that automates much of the maintenance work associated with running a relational database, such as setup, patching, backups, and scaling.
+
+1. Select stacks or platforms that are likely to have fewer vulnerabilities over time compared to other stacks or platforms
+
+    running software within a small container instead of a larger operating system.
+
+***Organizations should consider deploying applications in ways that make patching less likely to disrupt operations.***
+
+Traditional Approach: Previously, ABCD Corp would schedule maintenance windows during off-peak hours to apply patches, resulting in downtime. Customers in different time zones were still affected, leading to frustration and complaints.
+
+Improved Strategy:
+
+1. Microservices Architecture: ABCD Corp redesigned their application using microservices, allowing individual services to be updated without taking down the entire application.
+
+1. Blue-Green Deployment: For major updates, they implemented a blue-green deployment strategy. They applied patches to the "green" environment while the "blue" environment served live traffic. After testing the updates in green, they switched traffic to it, achieving near-zero downtime.
+
+1. Canary Releases: For less critical updates, they used canary releases, gradually rolling out the change to a small percentage of users before making it available to everyone. This allowed them to monitor the impact of the patch on system stability and user experience without widespread disruption.
+
+### Inventory Software and Assets
+
+***Organizations should establish and constantly maintain up-to-date software in inventories for their physical and virtual computing assets, including OT, IoT, and container assets***
+
+A realistic goal is to maintain a close-to-comprehensive inventory by relying on automation to constantly discover new assets and collect up-to-date information on all assets.
+
+When conducting software patching (updates), attention should be given to the specific details of each asset, such as servers and computers. In compiling a software inventory, one should record not only the software and its versions running on the asset but also include the technical and business characteristics of the asset. When assessing risks and determining the priorities for addressing issues, one should not only consider the software running on the asset itself but should take into account all the characteristics of the asset. This is because these characteristics provide the necessary context for understanding the potential security vulnerabilities of the asset.
+
+The characteristics that an organization should inventory will vary, but the following are examples of possible characteristics to track:
+
+* The asset’s platform type (e.g., IT, OT, IoT, mobile, cloud, VM)
+
+* The party who administrates the asset (e.g., IT department, third party, end user, vendor/manufacturer, shared responsibility model)
+
+* The applications, services, or other mechanisms used to manage the asset (e.g., endpoint management software, virtual machine manager, container management software)
+
+* The asset’s network connectivity in terms of protocols, frequency/duration, and bandwidth
+
+* The technical security controls already in place to safeguard the asset
+
+* The asset’s primary user(s) or interconnected services and their privileges
+
+Examples of mission/business characteristics that an organization should track include:
+
+* The asset’s role and importance to the organization, which are contextual and may be hard to define or determine
+
+* Laws, regulations, or policies that specify how soon a new vulnerability in the asset must be addressed
+
+* Contractual restrictions on patching (e.g., a highly regulated asset can only be patched by its manufacturer after testing and certification)
+
+* Mission/business restrictions on risk responses for that asset (e.g., an asset can only berebooted during a monthly maintenance outage)
+
+### Define Risk Response Scenarios
+
+***Organizations should define the software vulnerability risk response scenarios they need to be prepared to handle.*** Example of such scenarios include:
+
+* Routine patching
+
+  * This is the standard procedure for patches that are on a regular release cycle and have not been elevated to emergency status.
+
+  * Because routine patching does not have the urgency of emergency scenarios, and routine patch installation can interrupt operations (e.g., device reboots), it is often postponed and neglected.
+
+  * Provides many additional windows of opportunity for attackers.
+  
+  * Delaying routine patching also makes emergency patching more difficult, time-consuming, and disruptive because of the need to first install previous patches that new patches depend upon.
+
+* Emergency patching
+
+  * This is the procedure to address patching emergencies in a crisis situation, such as a severe vulnerability or a vulnerability being actively exploited.
+
+  * Emergency patching may be part of incident response efforts.
+
+  * Emergency patching needs to be handled as efficiently as possible to prevent the imminent exploitation of vulnerable assets.
+
+* Emergency mitigation
+
+  * This is the emergency procedure in a crisis situation, like those described above for the emergency patching scenario, to temporarily mitigate vulnerabilities before a patch is available.
+
+  * The mitigation can vary and may or may not need to be rolled back afterward. A patch might be flawed and not actually correct a vulnerability, or a patch might inadvertently disrupt the operation of other software or systems.
+
+  * Temporary stop using the software until patch is ready.
+
+* Unpatchable assets
+
+  * This is the implementation of isolation or other methods to mitigate the risk of systems that cannot be easily patched.
+
+  * Unpatchable assets need to be included in risk response planning because a new vulnerability in an asset might necessitate a change in the methods needed to mitigate its risk.
+
+### Assign Each Asset to a Maintenance Group
+
+***Organizations should use the software inventories, technical and business/mission characteristics, and risk response scenarios to assign each asset to a maintenance group.***
+
+Maintenance needs include not only patching (e.g., patch schedule, patch testing needs, outage restrictions, level of impact if vulnerable software is compromised) but also any other appropriate forms of mitigation and risk response, such as temporary mitigations used when patches are not yet available.
+
+Example:
+
+* On-premises datacenter (including servers, network equipment, storage, etc.)
+  
+  * Software to patch: Firmware, operating systems, and applications for server platforms
+
+  * Outage restrictions: Must adhere to scheduled outage windows for all nonemergency situations
+
+  * Existing mitigations: Network-based security controls restricting access to the assets and security controls running on the assets themselves
+
+  * Level of impact to the organization if compromised: High
+
+### Define Maintenance Plans for Each Maintenance Group
+
+Organizations should define a maintenance plan for each maintenance group for each applicable risk response scenario.
+
+* Maintenance Plans for Routine Patching
+
+    Organizations should consider adopting phased deployments for routine patching in which a small subset of the assets to be patched receive the patch first.
+
+    Organizations should offer flexibility with how soon routine patches are to be installed, while also forcing installation after a grace period has ended.
+
+* Maintenance Plans for Emergency Patching
+
+    Organizations should consider using the same general approach for emergency patching as for routine patching, except with a highly accelerated schedule.
+
+* Maintenance Plans for Emergency Mitigation
+
+    Organizations should plan for the quick implementation of multiple types of emergency mitigations to protect vulnerable assets.
+
+    Organizations should plan to replace emergency mitigations with permanent fixes.
+
+* Maintenance Plans for Unpatchable Assets
+
+    Organizations should plan to implement multiple types of long-term risk mitigation methods besides patching to protect vulnerable assets.
+
+    Organizations should plan to implement multiple types of mitigations to protect vulnerable unpatchable assets.
+
+    Organizations should plan on periodically reevaluating their alternatives to patching.
+
+### Choose Actionable Enterprise-Level Patching Metrics
+
+Organizations should take advantage of low-level metrics that they already collect when developing enterprise-level metrics to capture patching performance
+
+Organizations should utilize their existing low-level metrics to develop enterprise-level metrics that reflect the relative importance of each vulnerability and patch.
+
+![Table 1: Vulnerability Mitigation Time Summary Matrix](image.png)
+
+Organizations should frequently update their low-level metrics and strive for them to be as accurate as possible in order to improve the enterprise-level metrics based on them.
+
+### Consider Software Maintenance in Procurement
+
+Organizations should take software maintenance into consideration when procuring software.
+
+1. Will you be releasing updates for this software to address vulnerabilities?
+
+1. Approximately how many patches, updates, and upgrades do you expect to release each year for this software? On average, how quickly do you expect to address each vulnerability and release a patch? Do you bundle patches together or is each patch separate? How often do you anticipate releasing emergency updates?
+
+1. For how many years are you committed to correcting vulnerabilities in the software?
+
+1. Will you release updates on a regular schedule, as needed, or both? If a schedule will be followed, what is that schedule (weekly, monthly, quarterly, etc.)?
+
+1. Do you have a vulnerability disclosure and incident response program for your software? How transparent are you in your security-related communications to your customers?
+
+1. When a vulnerability in your software becomes public but a patch, update, or upgrade is not available, how do you recommend that customers protect their computing assets
+running your software? Will you provide an emergency mitigation to prevent vulnerability exploitation while maintaining most or all software functionality?
+
+1. When your software is patched or updated, how disruptive will that be to the operating software? For instance, will it require restarting the software, rebooting the asset on which the software is running, etc.?
+
+1. How do you test your patches before release? How often do customers experience significant issues with your patches? Do you provide rollback capabilities for uninstalling patches?
+
+---
+
 ## References
 
 1. [NIST - Guide to Enterprise Patch Management Planning:Preventive Maintenance for Technology](https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-40r4.pdf)
