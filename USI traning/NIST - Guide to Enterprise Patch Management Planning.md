@@ -489,6 +489,24 @@ Organizations should define a maintenance plan for each maintenance group for ea
 
 * Frequently update their low-level metrics and strive for them to be as accurate as possible in order to improve the enterprise-level metrics based on them.
 
+1. Vulnerability Response Time
+
+1. Patch Deployment Time
+
+1. Patch Coverage Rate
+
+1. Patch Failure Rate
+
+1. Re-patching Rate
+
+1. Vulnerability Exposure Time
+
+1. Risk Exposure Index
+
+1. Patch Dependencies
+
+1. Patch Testing Success Rate
+
 ### Consider Software Maintenance in Procurement
 
 Organizations should take software maintenance into consideration when procuring software.
