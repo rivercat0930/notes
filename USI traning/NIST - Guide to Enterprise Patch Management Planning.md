@@ -483,13 +483,11 @@ Organizations should define a maintenance plan for each maintenance group for ea
 
 ### Choose Actionable Enterprise-Level Patching Metrics
 
-Organizations should take advantage of low-level metrics that they already collect when developing enterprise-level metrics to capture patching performance
+* Take advantage of low-level metrics that they already collect when developing enterprise-level metrics to capture patching performance
 
-Organizations should utilize their existing low-level metrics to develop enterprise-level metrics that reflect the relative importance of each vulnerability and patch.
+* Utilize their existing low-level metrics to develop enterprise-level metrics that reflect the relative importance of each vulnerability and patch.
 
-![Table 1: Vulnerability Mitigation Time Summary Matrix](image.png)
-
-Organizations should frequently update their low-level metrics and strive for them to be as accurate as possible in order to improve the enterprise-level metrics based on them.
+* Frequently update their low-level metrics and strive for them to be as accurate as possible in order to improve the enterprise-level metrics based on them.
 
 ### Consider Software Maintenance in Procurement
 
