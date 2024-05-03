@@ -23,3 +23,5 @@ If anything is wrong no matter is English problem or wrong information, just let
 USI training => Temporary stop | OPEN (2024/02/19)
 
 CTFs/WeChall => Updating | OPEN (2024/04/07)
+
+LeetCode => Updating | OPEN (2024/05/03)
