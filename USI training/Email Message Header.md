@@ -18,7 +18,7 @@ Email, short for electronic mail, is a digital message sent from one computer to
 
 ---
 
-## Ｐarts of an Email
+## Parts of an Email
 
 1. Email Header
 
